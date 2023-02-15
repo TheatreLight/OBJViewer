@@ -1,17 +1,13 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include "controller/controller.h"
+#include "settings.h"
+
 #include <QFileDialog>
 #include <QMainWindow>
 #include <QMessageBox>
-#include <QTimer>
 #include <QtWidgets/QWidget>
-
-#include "QtGifImage/include/QtGifImage/qgifimage.h"
-#include "controller/controller.h"
-#include "glview.h"
-#include "model/filereader.h"
-#include "settings.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,7 +15,6 @@ class MainWindow;
 }
 QT_END_NAMESPACE
 
-namespace s21 {
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
@@ -56,10 +51,7 @@ private:
   Settings *settings_;
   QTimer *timer_;
   QString filename;
-  QGifImage *gif_;
   QImage *photo_;
   int time_{};
-  //  QString qfile_name_;
 };
-} // namespace s21
 #endif // MAINWINDOW_H

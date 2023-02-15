@@ -1,13 +1,10 @@
 #ifndef GLVIEW_H
 #define GLVIEW_H
 
+#include "settings.h"
+
 #include <QColorDialog>
 #include <QOpenGLWidget>
-#include <QTimer>
-//#include <QtOpenGL>
-//#include <QtWidgets/QWidget>
-
-#include "settings.h"
 
 class GLView : public QOpenGLWidget {
   Q_OBJECT
@@ -15,7 +12,6 @@ class GLView : public QOpenGLWidget {
 public:
   explicit GLView(QWidget *parent = nullptr);
   void initializeGL() override;
-  void resizeGL(int width, int height) override;
   void paintGL() override;
 
   void set_pointer(float *pointer) { pointer_ = pointer; }
@@ -53,8 +49,7 @@ private:
   float rot_z = 0;
   float angle_ = 0;
 
-  s21::Settings *settings_;
-  QTimer timer_;
+  Settings *settings_;
 };
 
 #endif // GLVIEW_H

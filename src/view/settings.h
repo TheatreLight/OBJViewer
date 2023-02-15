@@ -4,7 +4,6 @@
 #include <QColorDialog>
 #include <fstream>
 
-namespace s21 {
 class Settings {
 public:
   Settings(const Settings &) = delete;
@@ -46,5 +45,4 @@ private:
   QColor color_vertex_ = QColor(255, 255, 255);
 };
 
-} // namespace s21
 #endif // SETTINGS_H

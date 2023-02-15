@@ -4,8 +4,6 @@
 #include "model/filereader.h"
 #include "view/settings.h"
 
-namespace s21 {
-
 class Facade {
 public:
   Facade();
@@ -26,6 +24,5 @@ private:
   int faces_number_ = 0;
   int vertices_number_ = 0;
 };
-} // namespace s21
 
 #endif // FACADE_H

@@ -3,8 +3,6 @@
 
 #include "model/facade.h"
 
-namespace s21 {
-
 class Controller {
 public:
   explicit Controller(Facade *model);
@@ -17,5 +15,4 @@ private:
   Facade *model_;
 };
 
-} // namespace s21
 #endif // CONTROLLER_H

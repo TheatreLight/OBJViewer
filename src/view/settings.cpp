@@ -1,6 +1,5 @@
 #include "settings.h"
 
-namespace s21 {
 void Settings::ReadViewSettings() {
   std::ifstream in("settings.txt");
   std::string line;
@@ -75,5 +74,3 @@ void Settings::SaveViewSettings() {
     out << "vertex_blue_=" << color_vertex_.blueF() << std::endl;
   }
 }
-
-} // namespace s21

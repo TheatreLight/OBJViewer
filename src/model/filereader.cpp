@@ -1,14 +1,10 @@
 #include "filereader.h"
 
-#include "qdebug.h"
-
-namespace s21 {
 FileReader::FileReader(QString path) { ReadFile(path); }
 
 void FileReader::ReadFile(QString path) {
   QFile file(path);
   if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    qDebug() << "Can't open the file";
     return;
   }
   while (!file.atEnd()) {
@@ -27,7 +23,6 @@ void FileReader::LineHandler(QByteArray line) {
 
 void FileReader::SortVertices() {
   if (vertices.empty() || faces.empty()) {
-    qDebug() << "One of vectors is empty";
     return;
   }
   for (const auto &elem : faces) {
@@ -40,7 +35,6 @@ void FileReader::SortVertices() {
 
 std::vector<float> &FileReader::get_sorted_vertices() {
   if (vertices.empty() || faces.empty()) {
-    qDebug() << "One of vectors is empty";
     return sorted_vertices;
   }
   SortVertices();
@@ -48,14 +42,10 @@ std::vector<float> &FileReader::get_sorted_vertices() {
 }
 
 int FileReader::get_faces_count() {
-  if (faces.empty())
-    qDebug() << "Faces is empty";
   return faces.size();
 }
 
 int FileReader::get_vertices_count() {
-  if (vertices.empty())
-    qDebug() << "Vertices is empty";
   return vertices.size() / 3;
 }
 
@@ -99,4 +89,3 @@ bool FileReader::isVertexLine(QByteArray line) {
 bool FileReader::isFacesLine(QByteArray line) {
   return line[0] == 'f' && line[1] == ' ' ? true : false;
 }
-} // namespace s21

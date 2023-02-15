@@ -8,9 +8,9 @@
 int main(int argc, char *argv[]) {
   QApplication a(argc, argv);
   setlocale(LC_NUMERIC, "C");
-  s21::Facade model;
-  s21::Controller controller(&model);
-  s21::MainWindow w(&controller);
+  Facade model;
+  Controller controller(&model);
+  MainWindow w(&controller);
   w.show();
   return a.exec();
 }

@@ -1,22 +1,13 @@
 #include "glview.h"
 
-#include <QDebug>
-#include <iostream>
-
 GLView::GLView(QWidget *parent)
-    : QOpenGLWidget(parent), settings_(&s21::Settings::GetInstance()) {
-  connect(&timer_, SIGNAL(timeout()), this, SLOT(update()));
-  timer_.start(100);
+    : QOpenGLWidget(parent), settings_(&Settings::GetInstance()) {
 }
 
 void GLView::initializeGL() {
   glClearDepth(1.0);
   glEnable(GL_CULL_FACE);
   glEnable(GL_DEPTH_TEST);
-}
-
-void GLView::resizeGL(int width, int height) {
-  glViewport(0, 0, this->width(), this->height());
 }
 
 void GLView::paintGL() {

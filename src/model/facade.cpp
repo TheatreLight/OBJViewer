@@ -1,7 +1,5 @@
 #include "facade.h"
 
-namespace s21 {
-
 Facade::Facade() {}
 
 void Facade::ReadFile(QString path) {
@@ -10,4 +8,3 @@ void Facade::ReadFile(QString path) {
   set_faces_number(reader.get_faces_count());
   set_vertices_number(reader.get_vertices_count());
 }
-} // namespace s21

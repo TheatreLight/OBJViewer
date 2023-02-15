@@ -6,7 +6,6 @@
 #include <cctype>
 #include <vector>
 
-namespace s21 {
 class FileReader {
 public:
   explicit FileReader(QString path);
@@ -26,6 +25,5 @@ private:
   std::vector<int> faces;
   std::vector<float> sorted_vertices;
 };
-} // namespace s21
 
 #endif // FILEREADER_H

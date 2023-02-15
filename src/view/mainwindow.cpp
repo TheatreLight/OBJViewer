@@ -2,7 +2,7 @@
 
 #include "ui_mainwindow.h"
 
-namespace s21 {
+
 
 MainWindow::MainWindow(Controller *controller, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow), controller_(controller),
@@ -165,4 +165,3 @@ void MainWindow::on_savejpeg_clicked() {
                                            NULL, 100);
 }
 
-} // namespace s21
